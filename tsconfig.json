@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
+  },
+  "include": [
+    "src",
+    "src/**/*",
+    "test/**/*",
+    "typings/**/*",
+//    "config/**/*",
+    ".eslintrc.js",
+    "prettier.config.js",
+    "jest.config.js",
+    "mock/*"
+  ],
+  "exclude": [
+    "config",
+    "node_modules",
+    "build",
+    "dist",
+    "scripts"
+  ]
+}
