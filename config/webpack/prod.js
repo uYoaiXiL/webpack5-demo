@@ -7,7 +7,8 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const CompressionWebpackPlugin = require('compression-webpack-plugin');
+
 module.exports = merge(common, {
   mode: 'production',
   entry: {
@@ -46,6 +47,13 @@ module.exports = merge(common, {
     }),
     new ImageminPlugin({
       test: /\.(jpe?g|png|gif|svg)$/i,
+    }),
+    new CompressionWebpackPlugin({
+      filename: '[path][base].gz',
+      algorithm: 'gzip',
+      test: /\.js$|\.css$|\.html$/,
+      threshold: 10240,
+      minRatio: 0.7,
     }),
   ].filter(Boolean),
   optimization: {
